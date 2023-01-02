@@ -1,4 +1,4 @@
-# This repo is no longer active supported, a new project is started and C source not opened. But libraries and headers opened at
+# This repo is no longer active supported, a new project is started and source code opened at
 # https://github.com/autoas/ssas-public
 
 # as
