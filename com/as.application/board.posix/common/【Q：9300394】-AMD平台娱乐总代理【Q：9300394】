@@ -104,7 +104,7 @@
 #define EEP_ERASE_TIME				TBD
 
 // Specified maximum number of write cycles under worst case conditions of
-// specific EEPROM hardware (e.g. +90°C)
+// specific EEPROM hardware (e.g. +90Â°C)
 #define EEP_ALLOWED_WRITE_CYCLES x
 
 
