@@ -301,7 +301,7 @@ extern uint32_t LCD_Initialize( void )
 extern void LCD_On( void )
 {
     /* Display Control 1 (R07h) */
-    /* When BASEE = “1”, the base image is displayed. */
+    /* When BASEE = Â“1Â”, the base image is displayed. */
     /* GON and DTE Set the output level of gate driver G1 ~ G320 : Normal Display */
     /* D1=1 D0=1 BASEE=1: Base image display Operate */
     LCD_WriteReg( ILI9325_R07H,   ILI9325_R07H_BASEE
@@ -316,8 +316,8 @@ extern void LCD_On( void )
 extern void LCD_Off( void )
 {
     /* Display Control 1 (R07h) */
-    /* When BASEE = “0”, no base image is displayed. */
-    /* When the display is turned off by setting D[1:0] = “00”, the ILI9325 internal display
+    /* When BASEE = Â“0Â”, no base image is displayed. */
+    /* When the display is turned off by setting D[1:0] = Â“00Â”, the ILI9325 internal display
        operation is halted completely. */
     /* PTDE1/0 = 0: turns off partial image. */
     LCD_WriteReg( ILI9325_R07H, 0x00 ) ;
@@ -329,7 +329,7 @@ extern void LCD_Off( void )
 extern void LCD_PowerDown( void )
 {
     /* Display Control 1 (R07h) */
-    /* When BASEE = “0”, no base image is displayed. */
+    /* When BASEE = Â“0Â”, no base image is displayed. */
     /* GON and DTE Set the output level of gate driver G1 ~ G320 : Normal Display */
     /* D1=1 D0=1 BASEE=1: Base image display Operate */
     LCD_WriteReg( ILI9325_R07H,   ILI9325_R07H_GON | ILI9325_R07H_DTE
@@ -390,17 +390,17 @@ extern void LCD_SetDisplayLandscape( uint32_t dwRGB )
 {
     uint16_t dwValue ;
 
-    /* When AM = “1”, the address is updated in vertical writing direction. */
-    /* DFM Set the mode of transferring data to the internal RAM when TRI = “1”. */
-    /* When TRI = “1”, data are transferred to the internal RAM in 8-bit x 3 transfers mode via the 8-bit interface. */
+    /* When AM = Â“1Â”, the address is updated in vertical writing direction. */
+    /* DFM Set the mode of transferring data to the internal RAM when TRI = Â“1Â”. */
+    /* When TRI = Â“1Â”, data are transferred to the internal RAM in 8-bit x 3 transfers mode via the 8-bit interface. */
     /* Use the high speed write mode (HWM=1) */
-    /* ORG = “1”: The original address “00000h” moves according to the I/D[1:0] setting.  */
+    /* ORG = Â“1Â”: The original address Â“00000hÂ” moves according to the I/D[1:0] setting.  */
     /* I/D[1:0] = 00 Horizontal : decrement Vertical :  decrement, AM=0:Horizontal */
     dwValue = ILI9325_R03H_AM | ILI9325_R03H_DFM | ILI9325_R03H_TRI | ILI9325_R03H_HWM | ILI9325_R03H_ORG ;
 
     if ( dwRGB == 0 )
     {
-        /* BGR=”1”: Swap the RGB data to BGR in writing into GRAM. */
+        /* BGR=Â”1Â”: Swap the RGB data to BGR in writing into GRAM. */
         dwValue |= ILI9325_R03H_BGR ;
     }
     LCD_WriteReg( ILI9325_R03H, dwValue ) ;
@@ -415,14 +415,14 @@ extern void LCD_SetDisplayPortrait( uint32_t dwRGB )
     uint16_t dwValue ;
 
     /* Use the high speed write mode (HWM=1) */
-    /* When TRI = “1”, data are transferred to the internal RAM in 8-bit x 3 transfers mode via the 8-bit interface. */
-    /* DFM Set the mode of transferring data to the internal RAM when TRI = “1”. */
+    /* When TRI = Â“1Â”, data are transferred to the internal RAM in 8-bit x 3 transfers mode via the 8-bit interface. */
+    /* DFM Set the mode of transferring data to the internal RAM when TRI = Â“1Â”. */
     /* I/D[1:0] = 11 Horizontal : increment Vertical :  increment, AM=0:Horizontal */
     dwValue = ILI9325_R03H_HWM | ILI9325_R03H_TRI | ILI9325_R03H_DFM | ILI9325_R03H_ID1 | ILI9325_R03H_ID0 ;
 
     if ( dwRGB == 0 )
     {
-        /* BGR=”1”: Swap the RGB data to BGR in writing into GRAM. */
+        /* BGR=Â”1Â”: Swap the RGB data to BGR in writing into GRAM. */
         dwValue |= ILI9325_R03H_BGR ;
     }
     LCD_WriteReg( ILI9325_R03H, dwValue ) ;
