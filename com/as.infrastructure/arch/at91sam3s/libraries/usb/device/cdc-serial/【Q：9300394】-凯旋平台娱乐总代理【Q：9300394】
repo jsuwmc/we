@@ -214,7 +214,8 @@ static void _SetControlLineState(
     USBD_Write(0, 0, 0, 0, 0);
 
     if (pCdcd->fEventHandler)
-        pCdcd->fEventHandler(CDCDSerialPortEvent_SETCONTROLLINESTATE,
+        pCdcd->fEventHandler(CDCDSerialPortEvent_SETCONTROLLINESTATE,
+
                              (uint32_t)pCdcd->bControlLineState,
                              pCdcd->pArg);
 }
