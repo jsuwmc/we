@@ -107,7 +107,7 @@
 /**
  * Libc porting layers
  */
-#if defined   ( __CC_ARM   ) /* Keil µVision 4 */
+#if defined   ( __CC_ARM   ) /* Keil ÂµVision 4 */
 #    include "include/rand.h"
 #elif defined ( __ICCARM__ ) /* IAR Ewarm 5.41+ */
 #    include "include/rand.h"
@@ -310,7 +310,7 @@
 /** Pins ADC */
 #define PINS_ADC PIN_ADC0_AD0, PIN_ADC0_AD1, PIN_ADC0_AD2, PIN_ADC0_AD3, PIN_ADC0_AD4, PIN_ADC0_AD5, PIN_ADC0_AD6, PIN_ADC0_AD7
 
-/** Startup time max, return from Idle mode (in µs) */
+/** Startup time max, return from Idle mode (in Âµs) */
 #define ADC_STARTUP_TIME_MAX       15
 /** Track and hold Acquisition Time min (in ns) */
 #define ADC_TRACK_HOLD_TIME_MIN  1200
