@@ -76,8 +76,8 @@ typedef uint8 EcuM_UserType;
 
 #if 0
 enum {
-	/** Internal reset of µC (bit 2).
-	 *  The internal reset typically only resets the µC
+	/** Internal reset of ÂµC (bit 2).
+	 *  The internal reset typically only resets the ÂµC
 	 *  core but not peripherals or memory
 	 *  controllers. The exact behavior is hardware
 	 *  specific.
